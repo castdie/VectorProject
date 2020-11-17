@@ -1,7 +1,7 @@
 
 package view;
 
-import Model.VectorNode;
+import model.VectorNode;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -23,6 +23,7 @@ import javafx.scene.shape.Line;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import model.Vector;
 
 
 
@@ -44,9 +45,9 @@ public class VectorView extends HBox{
     private HBox HB1 = new HBox(4);
     private HBox HB2 = new HBox(5);
     private double scale = 5;
-    private TableColumn<VectorNode, Integer> IDColumn = new TableColumn<>("Vector ID"); 
-    private TableColumn<VectorNode, Double> XColumn = new TableColumn<>("X Value"); 
-    private TableColumn<VectorNode, Double> YColumn = new TableColumn<>("Y Value"); 
+    private TableColumn<Vector, String> IDColumn = new TableColumn<>("Vector ID"); 
+    private TableColumn<Vector, Double> XColumn = new TableColumn<>("X Value"); 
+    private TableColumn<Vector, Double> YColumn = new TableColumn<>("Y Value"); 
     
     
     public VectorView(){
@@ -76,6 +77,7 @@ public class VectorView extends HBox{
         XColumn.setCellValueFactory(new PropertyValueFactory<>("XValue"));
         YColumn.setMinWidth(150);
         YColumn.setCellValueFactory(new PropertyValueFactory<>("YValue"));
+        tableView.setEditable(true);
         tableView.setMaxWidth(395);
         tableView.setMaxHeight(350);
         tableView.getColumns().addAll(IDColumn, XColumn, YColumn);
@@ -215,14 +217,6 @@ public class VectorView extends HBox{
         this.clear = clear;
     }
 
-    public TableView gettableView() {
-        return tableView;
-    }
-
-    public void settableView(TableView tableView) {
-        this.tableView = tableView;
-    }
-
     public Text getVectors() {
         return vectors;
     }
@@ -279,27 +273,27 @@ public class VectorView extends HBox{
         this.HB2 = HB2;
     }
 
-    public TableColumn<VectorNode, Integer> getIDColumn() {
+    public TableColumn<Vector, String> getIDColumn() {
         return IDColumn;
     }
 
-    public void setIDColumn(TableColumn<VectorNode, Integer> IDColumn) {
+    public void setIDColumn(TableColumn<Vector, String> IDColumn) {
         this.IDColumn = IDColumn;
     }
 
-    public TableColumn<VectorNode, Double> getXColumn() {
+    public TableColumn<Vector, Double> getXColumn() {
         return XColumn;
     }
 
-    public void setXColumn(TableColumn<VectorNode, Double> XColumn) {
+    public void setXColumn(TableColumn<Vector, Double> XColumn) {
         this.XColumn = XColumn;
     }
 
-    public TableColumn<VectorNode, Double> getYColumn() {
+    public TableColumn<Vector, Double> getYColumn() {
         return YColumn;
     }
 
-    public void setYColumn(TableColumn<VectorNode, Double> YColumn) {
+    public void setYColumn(TableColumn<Vector, Double> YColumn) {
         this.YColumn = YColumn;
     }
 

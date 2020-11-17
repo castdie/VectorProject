@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package model;
 
 //import java.awt.Color; 
 import java.util.ArrayList;
@@ -98,6 +98,9 @@ public class VectorNode extends Path implements Comparable<VectorNode>{
          
         this(defaultStartX, defaultStartY, X, Y, defaultArrowHeadSize);
         
+    }
+    public VectorNode(){
+        this(defaultStartX, defaultStartY, 1, 1, defaultArrowHeadSize);
     }
 
     public static double getDefaultStartX() {
@@ -353,4 +356,6 @@ public class VectorNode extends Path implements Comparable<VectorNode>{
     public String toString(){
          return this.ID + "<" + Math.round(this.XValue) + "," + Math.round(this.YValue) + ">";
     }
+    
+    
 }

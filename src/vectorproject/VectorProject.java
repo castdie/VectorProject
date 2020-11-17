@@ -5,6 +5,7 @@
  */
 package vectorproject;
 
+import controller.Controller;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -22,11 +23,9 @@ public class VectorProject extends Application {
     
     @Override
     public void start(Stage primaryStage) {
-       VectorView v = new VectorView();
-        StackPane root = new StackPane();
-        root.getChildren().add(v);
-        
-        Scene scene = new Scene(root);
+       VectorView view = new VectorView();
+       Controller c = new Controller(view);
+       Scene scene = new Scene(view);
             
         primaryStage.setTitle("Vectors");
         primaryStage.setScene(scene);
