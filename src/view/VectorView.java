@@ -1,7 +1,6 @@
 
 package view;
 
-import model.VectorNode;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -27,6 +26,7 @@ import model.Vector;
 
 
 
+
 public class VectorView extends HBox{
     
     private Text titleText = new Text("VECTOR ADDITION");
@@ -45,9 +45,9 @@ public class VectorView extends HBox{
     private HBox HB1 = new HBox(4);
     private HBox HB2 = new HBox(5);
     private double scale = 5;
-    private TableColumn<Vector, String> IDColumn = new TableColumn<>("Vector ID"); 
-    private TableColumn<Vector, Double> XColumn = new TableColumn<>("X Value"); 
-    private TableColumn<Vector, Double> YColumn = new TableColumn<>("Y Value"); 
+    private TableColumn IDColumn = new TableColumn<>("Vector ID"); 
+    private TableColumn XColumn = new TableColumn<>("X Value"); 
+    private TableColumn YColumn = new TableColumn<>("Y Value"); 
     
     
     public VectorView(){
@@ -57,6 +57,7 @@ public class VectorView extends HBox{
         titleText.setFont(Font.font("Arial Black", FontWeight.BLACK, 15));
         vectors.setFont(Font.font("Arial Black", FontWeight.BLACK, 12));
         resultantVector.setFont(Font.font("Arial Black", FontWeight.BLACK, 12));
+        resVecXY.setFont(Font.font(18));
         scalar.setPromptText("Scalar");
         xField.setPromptText("X Value");
         yField.setPromptText("Y Value");

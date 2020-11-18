@@ -7,6 +7,7 @@ package model;
 
 //import java.awt.Color; 
 import java.util.ArrayList;
+import java.util.List;
 import javafx.scene.control.Tooltip;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.LineTo;
@@ -167,7 +168,7 @@ public class VectorNode extends Path implements Comparable<VectorNode>{
          return v3;
     }
     
-    public static VectorNode add(ArrayList<VectorNode> list){
+    public static VectorNode add(List<VectorNode> list){
         
         double totalX = 0;
         double totalY = 0;
@@ -183,7 +184,7 @@ public class VectorNode extends Path implements Comparable<VectorNode>{
         return v;
     }
     
-    public static VectorNode add(ArrayList<VectorNode> list, double scale){
+    public static VectorNode add(List<VectorNode> list, double scale){
         
         double totalX = 0;
         double totalY = 0;
@@ -354,7 +355,7 @@ public class VectorNode extends Path implements Comparable<VectorNode>{
     }
     
     public String toString(){
-         return this.ID + "<" + Math.round(this.XValue) + "," + Math.round(this.YValue) + ">";
+         return "V" + "< " + Math.round(this.XValue) + " , " + Math.round(this.YValue) + " >";
     }
     
     

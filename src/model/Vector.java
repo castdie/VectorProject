@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author Diego
  */
-public class Vector {
+ public class Vector {
     private double XValue;
     private double YValue;
     private String ID;
@@ -20,20 +20,21 @@ public class Vector {
     public Vector(double XValue, double YValue, String ID) {
         this.XValue = XValue;
         this.YValue = YValue;
-        counter++;
-        this.ID = "V" + counter;
+        this.ID = ID;
     }
     
     public Vector(double XValue, double YValue){
-        super();
-        this.ID = "";            
+        this.XValue = XValue;
+        this.YValue = YValue;
+        this.ID = "V" + counter;          
     }
 
     public Vector() {
-        super();
         this.XValue = 1;
         this.YValue = 1;
-        
+        counter++;
+        this.ID = "V" + counter;
+
     }
 
     public double getXValue() {
@@ -60,6 +61,9 @@ public class Vector {
         this.ID = ID;
     }
     
+    public static int getCounter(){
+        return counter;
+    }
     public Vector add(Vector v1){
         
         Vector v2 = new Vector(this.getXValue() + v1.getXValue(), this.getYValue() + v1.getYValue());       
@@ -86,7 +90,7 @@ public class Vector {
         return v;
     }
     
-    public static Vector add(List<Vector> list, double scale){
+    /*public static Vector add(List<Vector> list, double scale){
         
         double totalX = 0;
         double totalY = 0;
@@ -101,7 +105,7 @@ public class Vector {
         
         
         return v;
-    }
+    }*/
      
     public Vector multiplyScalar(double scalar){
         
@@ -118,5 +122,12 @@ public class Vector {
         return v2;
     }
     
+    public static void restartCounter(){
+         counter = 0;
+    }
+    
+    public String toString(){
+         return "V" + "< " + Math.round(this.XValue) + " , " + Math.round(this.YValue) + " >";
+    }
     
 }
